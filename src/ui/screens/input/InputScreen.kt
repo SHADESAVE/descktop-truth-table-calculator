@@ -1,9 +1,9 @@
 package ui.screens.input
 
-import javafx.beans.property.SimpleStringProperty
 import javafx.scene.paint.Color
 import tornadofx.*
 import ui.screens.TruthTableViewModel
+import ui.screens.basis
 
 class InputScreen : View("Calculator") {
     private val controller: InputController by inject()
@@ -18,50 +18,50 @@ class InputScreen : View("Calculator") {
         }
 
         hbox {
-            button("¬") {
+            button(basis[4].toString()) {
                 setPrefSize(45.0, 45.0)
                 tooltip("Отрицание")
-                action { model.expression.value += "¬" }
+                action { model.expression.value += basis[4] }
                 style {
                     textFill = Color.BLUE
                     fontSize = 20.px
                 }
             }
 
-            button("∧") {
+            button(basis[3].toString()) {
                 setPrefSize(45.0, 45.0)
                 tooltip("Конъюнкция")
-                action { model.expression.value += "∧" }
+                action { model.expression.value += basis[3] }
                 style {
                     textFill = Color.BLUE
                     fontSize = 18.px
                 }
             }
 
-            button("∨") {
+            button(basis[2].toString()) {
                 setPrefSize(45.0, 45.0)
                 tooltip("Дизъюнкция")
-                action { model.expression.value += "∨" }
+                action { model.expression.value += basis[2] }
                 style {
                     textFill = Color.BLUE
                     fontSize = 18.px
                 }
             }
 
-            button("→") {
+            button(basis[1].toString()) {
                 setPrefSize(45.0, 45.0)
                 tooltip("Импликация")
-                action { model.expression.value += "→" }
+                action { model.expression.value += basis[1] }
                 style {
                     textFill = Color.BLUE
                     fontSize = 18.px
                 }
             }
 
-            button("↔") {
+            button(basis[0].toString()) {
                 setPrefSize(45.0, 45.0)
                 tooltip("Тождество")
-                action { model.expression.value += "↔" }
+                action { model.expression.value += basis[0] }
                 style {
                     textFill = Color.BLUE
                     fontSize = 18.px
@@ -159,10 +159,11 @@ class InputScreen : View("Calculator") {
     override fun onDock() {
         model.expression.value = ""
         model.errorMsg.value = ""
-        model.rows.value = ""
-        model.columns.value = ""
-        model.operations.value = ""
-        model.args.value = ""
+        model.rowsCount.value = ""
+        model.columnsCount.value = ""
+        model.operationsCount.value = ""
+        model.argsCount.value = ""
+        model.tableColumns.value.clear()
         model.clearDecorators()
     }
 }

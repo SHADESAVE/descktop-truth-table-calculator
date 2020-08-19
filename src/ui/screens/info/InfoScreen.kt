@@ -3,8 +3,6 @@ package ui.screens.info
 import tornadofx.*
 import ui.screens.TruthTableViewModel
 import ui.screens.truthtable.TruthTableScreen
-import uitls.ExpressionValidate
-import kotlin.math.pow
 
 class InfoScreen : View("Calculator") {
     private val model: TruthTableViewModel by inject()
@@ -20,7 +18,7 @@ class InfoScreen : View("Calculator") {
                 paddingLeft = 5
                 isWrapText = true
             }
-            label(model.args) {
+            label(model.argsCount) {
                 isWrapText = true
             }
         }
@@ -31,7 +29,7 @@ class InfoScreen : View("Calculator") {
                 paddingLeft = 5
                 isWrapText = true
             }
-            label(model.rows) {
+            label(model.rowsCount) {
                 isWrapText = true
             }
         }
@@ -41,7 +39,7 @@ class InfoScreen : View("Calculator") {
                 paddingLeft = 5
                 isWrapText = true
             }
-            label(model.operations) {
+            label(model.operationsCount) {
                 isWrapText = true
             }
         }
@@ -52,7 +50,7 @@ class InfoScreen : View("Calculator") {
                 paddingLeft = 5
                 isWrapText = true
             }
-            label(model.columns) {
+            label(model.columnsCount) {
                 isWrapText = true
             }
         }
