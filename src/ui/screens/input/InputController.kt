@@ -129,7 +129,7 @@ class InputController : Controller() {
         model.tableRows.value.setAll(truthTableString)
 
         var counter = 0
-        truthTableString.forEach { innerList -> counter += innerList[innerList.size-1].toInt() }
+        truthTableString.forEach { innerList -> counter += innerList[innerList.size - 1].toInt() }
         when (counter) {
             truthTableString.size -> model.formulasResult.value = "Формула является тождественно истинной"
             0 -> model.formulasResult.value = "Формула является тождественно ложной (невыполнимой)"
