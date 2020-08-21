@@ -49,13 +49,13 @@ class InputController : Controller() {
             model.columnsCount.value = (args.size + operationsCounter).toString()
             model.tableColumns.value.addAll(args)
 
-            createTruthTable()
+            getTruthTable()
 
             find(InputScreen::class).replaceWith(InfoScreen::class, ViewTransition.Slide(0.3.seconds, ViewTransition.Direction.LEFT))
         }
     }
 
-    private fun createTruthTable() {
+    private fun getTruthTable() {
         nextSymbol()
         val result = equivalence()
 

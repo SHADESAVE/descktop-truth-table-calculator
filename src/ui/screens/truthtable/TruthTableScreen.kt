@@ -1,6 +1,5 @@
 package ui.screens.truthtable
 
-import javafx.beans.property.ReadOnlyBooleanWrapper
 import javafx.beans.property.ReadOnlyStringWrapper
 import tornadofx.*
 import ui.screens.TruthTableViewModel
@@ -26,7 +25,7 @@ class TruthTableScreen : View("Calculator") {
         label(model.formulasResult)
 
 
-        button("Back") {
+        button("Назад") {
             useMaxWidth = true
             action {
                 replaceWith(InputScreen::class)
