@@ -163,7 +163,9 @@ class InputScreen : View("Calculator") {
         model.columnsCount.value = ""
         model.operationsCount.value = ""
         model.argsCount.value = ""
+        model.formulasResult.value = ""
         model.tableColumns.value.clear()
+        model.tableRows.value.clear()
         model.clearDecorators()
     }
 }
